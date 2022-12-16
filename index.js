@@ -53,9 +53,9 @@ const hoursWorkedOnDate = function(employee, soughtDate){
 }
 
 const wagesEarnedOnDate = function(employee, dateSought){
-    let rawWage = hoursWorkedOnDate(employee, dateSought)
+    let employeeWage = hoursWorkedOnDate(employee, dateSought)
     *(employee.payPerHour)
-    return parseFloat(rawWage.toString())
+    return parseFloat(employeeWage.toString())
 }
 
 const allWagesFor = function(employee){
@@ -71,13 +71,13 @@ const allWagesFor = function(employee){
 }
 
 const findEmployeeByFirstName = function(srcArray, firstName) {
-  return srcArray.find(function(rec){
-    return rec.firstName === firstName
+  return srcArray.find(function(record){
+    return record.firstName === firstName
   })
 }
 
 const calculatePayroll = function(arrayOfEmployeeRecords){
-    return arrayOfEmployeeRecords.reduce(function(memo, rec){
-        return memo + allWagesFor(rec)
+    return arrayOfEmployeeRecords.reduce(function(memo, record){
+        return memo + allWagesFor(record)
     }, 0)
 }
